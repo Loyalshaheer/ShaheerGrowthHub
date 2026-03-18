@@ -4,14 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shaheer Growth Hub | Learn AI. Grow Skills. Earn Online.</title>
+    <title>Shaheer Growth Hub | Premium AI Learning</title>
     <meta name="description"
         content="Empowering youth through AI learning and skill-based growth. Start your journey with Shaheer Growth Hub today.">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Outfit:wght@400;600;700;800&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
@@ -20,207 +20,416 @@
 
 <body>
 
+    <!-- Dynamic Background Elements -->
+    <div class="bg-elements">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
     <!-- Header / Navigation -->
-    <header>
+    <header class="glass-header">
         <nav class="container">
-            <div class="logo">SHAHEER<span>GROWTH HUB</span></div>
+            <a href="#" class="logo">
+                <span class="logo-text">SHAHEER</span>
+                <span class="logo-subtext">GROWTH HUB</span>
+            </a>
             <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#courses">Courses</a></li>
-                <li><a href="#journey">Journey</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#courses" class="nav-link">Courses</a></li>
+                <li><a href="#journey" class="nav-link">Journey</a></li>
                 <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdB96-YvT9lr67E8rFunnnAn-qFR_ITgN2ZRzqG21204jN9Zw/viewform"
-                        target="_blank" class="btn btn-small">Enroll Now</a></li>
+                        target="_blank" class="btn btn-primary btn-sm btn-glow">Enroll Now <i
+                            class="fas fa-arrow-right"></i></a></li>
             </ul>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
         </nav>
     </header>
 
     <main>
         <!-- Hero Section -->
         <section id="hero" class="hero-section">
-            <div class="container hero-content">
-                <div class="hero-text animate-fade-in">
-                    <span class="badge">Future of Learning</span>
-                    <h1>Empower Your Future with <span>AI Mastery</span></h1>
-                    <p class="tagline">Learn AI. Grow Skills. Earn Online.</p>
-                    <p class="description">Shaheer Growth Hub is dedicated to empowering youth through cutting-edge AI
-                        learning, helping you build high-income skills and achieve financial independence.</p>
-                    <div class="hero-btns">
-                        <a href="#enroll" class="btn btn-primary">Start Your Journey</a>
-                        <a href="#courses" class="btn btn-secondary">Explore Courses</a>
+            <div class="container hero-container">
+                <div class="hero-content" data-reveal="left">
+                    <div class="badge-modern">
+                        <span class="pulse-dot"></span>
+                        <span class="badge-text">Master the Future of Learning</span>
+                    </div>
+                    <h1 class="hero-title">
+                        Empower Your Future with <br>
+                        <span class="text-gradient">AI Mastery</span>
+                    </h1>
+                    <p class="hero-subtitle">Learn cutting-edge AI skills, build high-income <br>capabilities, and
+                        unlock true financial independence.</p>
+
+                    <div class="hero-actions">
+                        <a href="#enroll" class="btn btn-primary btn-glow btn-lg">Start Your Journey <i
+                                class="fas fa-rocket"></i></a>
+                        <a href="#courses" class="btn btn-secondary btn-glass btn-lg">Explore Courses <i
+                                class="fas fa-chevron-right"></i></a>
+                    </div>
+
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <h3 class="stat-number">500+</h3>
+                            <p class="stat-label">Students Empowered</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3 class="stat-number">10+</h3>
+                            <p class="stat-label">AI Tools Covered</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3 class="stat-number">100%</h3>
+                            <p class="stat-label">Practical Approach</p>
+                        </div>
                     </div>
                 </div>
-                <div class="hero-visual animate-glow">
-                    <img src="./assets/hero_visual.png" alt="Shaheer Growth Hub AI Visual" class="hero-img">
+
+                <div class="hero-visual-wrapper" data-reveal="right">
+                    <div class="glass-card hero-image-card">
+                        <img src="./assets/hero_visual.png" alt="Shaheer Growth Hub AI Visual" class="hero-img-bg"
+                            onerror="this.style.display='none'">
+                        <!-- Fallback & decorative glow -->
+                        <div class="hero-img-placeholder">
+                            <div class="h-orb h-orb-1"></div>
+                            <div class="h-orb h-orb-2"></div>
+                            <i class="fas fa-brain ai-icon"></i>
+                        </div>
+                    </div>
+                    <!-- Floating aesthetic elements -->
+                    <div class="floating-badge fb-1 glass-card">
+                        <i class="fas fa-robot"></i> <span>ChatGPT Mastery</span>
+                    </div>
+                    <div class="floating-badge fb-2 glass-card">
+                        <i class="fas fa-bolt"></i> <span>Fast Execution</span>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- About / Mission Section -->
-        <section id="about" class="about-section">
-            <div class="container grid-2">
-                <div class="about-image animate-reveal">
-                    <div class="image-placeholder main-mission-img"></div>
+        <section id="about" class="section about-section">
+            <div class="container grids-2">
+                <div class="about-visual" data-reveal="up">
+                    <div class="mission-image glass-card">
+                        <div class="abstract-pattern"></div>
+                        <div class="mission-icon-wrapper">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                    </div>
                 </div>
-                <div class="about-text animate-reveal">
-                    <h2 class="section-title">Our Mission</h2>
-                    <p>At Shaheer Growth Hub, we believe that every young person deserves a path to success. Our mission
-                        is to help youth escape negative environments and lack of opportunities by providing them with
-                        the tools, skills, and mindset needed to thrive in the digital age.</p>
-                    <p>We focus on personal growth, independence, and future success through skill-based education that
-                        translates directly into real-world earning potential.</p>
+                <div class="about-content" data-reveal="up" style="transition-delay: 0.2s;">
+                    <div class="section-label">Our Mission</div>
+                    <h2 class="section-heading">Transforming Potential <br>into <span
+                            class="text-gradient">Excellence</span></h2>
+                    <p class="section-body">At Shaheer Growth Hub, we believe that every young person deserves a path to
+                        success. We help youth escape negative environments and lack of opportunities by providing them
+                        with the tools, skills, and mindset needed to thrive in the digital age.</p>
+                    <p class="section-body">Our focus is entirely on personal growth, independence, and future success
+                        through skill-based education that translates directly into real-world earning potential.</p>
+                    <ul class="mission-checks">
+                        <li><i class="fas fa-check-circle"></i> World-class AI curriculum</li>
+                        <li><i class="fas fa-check-circle"></i> Real-world project building</li>
+                        <li><i class="fas fa-check-circle"></i> Mentorship & Community support</li>
+                    </ul>
                 </div>
             </div>
         </section>
 
         <!-- Courses Section -->
-        <section id="courses" class="courses-section">
+        <section id="courses" class="section courses-section">
             <div class="container">
-                <h2 class="section-title text-center">Master the Skills of Tomorrow</h2>
+                <div class="section-header text-center" data-reveal="up">
+                    <div class="section-label">Curriculum</div>
+                    <h2 class="section-heading">Master the <span class="text-gradient">Skills of Tomorrow</span></h2>
+                    <p class="section-subtitle">Comprehensive, step-by-step training programs designed to make you an
+                        expert in the AI-driven economy.</p>
+                </div>
+
                 <div class="courses-grid">
                     <!-- Current Course -->
-                    <div class="course-card active animate-reveal">
-                        <div class="course-badge">Live Batch</div>
-                        <h3>Content Creation with AI</h3>
-                        <p>Master the art of AI-driven content. Learn AI writing, video production, social media growth
-                            hacks, and freelancing basics.</p>
+                    <div class="course-card premium-card active-card" data-reveal="up" style="transition-delay: 0.1s;">
+                        <div class="card-glow"></div>
+                        <div class="course-header">
+                            <span class="course-status status-live">Live Batch</span>
+                            <div class="course-icon"><i class="fas fa-laptop-code"></i></div>
+                        </div>
+                        <h3 class="course-title">Content Creation with AI</h3>
+                        <p class="course-desc">Master the art of AI-driven content. Learn AI writing, video production,
+                            social media growth hacks, and freelancing basics.</p>
+
+                        <div class="course-divider"></div>
+
                         <ul class="course-features">
-                            <li>AI Writing & Scripting</li>
-                            <li>Automated Video Tools</li>
-                            <li>Social Media Strategy</li>
-                            <li>Freelancing Essentials</li>
+                            <li><i class="fas fa-check"></i> AI Writing & Scripting</li>
+                            <li><i class="fas fa-check"></i> Automated Video Tools</li>
+                            <li><i class="fas fa-check"></i> Social Media Strategy</li>
+                            <li><i class="fas fa-check"></i> Freelancing Essentials</li>
                         </ul>
-                        <a href="#enroll" class="btn btn-small btn-block">Learn More</a>
+                        <div class="course-action">
+                            <a href="#enroll" class="btn btn-primary btn-block btn-glow">Enroll Now</a>
+                        </div>
                     </div>
 
                     <!-- Upcoming Course -->
-                    <div class="course-card upcoming animate-reveal">
-                        <div class="course-badge">Coming Soon</div>
-                        <h3>Web & App Creation with AI</h3>
-                        <p>Build professional websites and applications without deep coding knowledge using advanced AI
-                            development tools.</p>
-                        <a href="#" class="btn btn-disabled btn-block">Stay Tuned</a>
+                    <div class="course-card premium-card upcoming-card" data-reveal="up"
+                        style="transition-delay: 0.2s;">
+                        <div class="course-header">
+                            <span class="course-status status-soon">Coming Soon</span>
+                            <div class="course-icon"><i class="fas fa-code"></i></div>
+                        </div>
+                        <h3 class="course-title">Web & App Creation with AI</h3>
+                        <p class="course-desc">Build professional websites and applications without deep coding
+                            knowledge using advanced AI development tools.</p>
+
+                        <div class="course-divider"></div>
+
+                        <ul class="course-features">
+                            <li><i class="fas fa-lock text-muted"></i> No-Code / Low-Code</li>
+                            <li><i class="fas fa-lock text-muted"></i> AI Code Generation</li>
+                            <li><i class="fas fa-lock text-muted"></i> Rapid Prototyping</li>
+                            <li><i class="fas fa-lock text-muted"></i> Deployment Basics</li>
+                        </ul>
+                        <div class="course-action">
+                            <button class="btn btn-glass btn-block" disabled>Stay Tuned</button>
+                        </div>
                     </div>
 
                     <!-- Advanced Placeholder -->
-                    <div class="course-card advanced animate-reveal">
-                        <div class="course-badge">Advanced</div>
-                        <h3>AI Earning Strategies</h3>
-                        <p>Deep dive into advanced AI freelancing, agency building, and global earning strategies for
-                            professionals.</p>
-                        <a href="#" class="btn btn-disabled btn-block">Unlock Soon</a>
+                    <div class="course-card premium-card locked-card" data-reveal="up" style="transition-delay: 0.3s;">
+                        <div class="course-header">
+                            <span class="course-status status-locked">Advanced</span>
+                            <div class="course-icon"><i class="fas fa-chart-line"></i></div>
+                        </div>
+                        <h3 class="course-title">AI Earning Strategies</h3>
+                        <p class="course-desc">Deep dive into advanced AI freelancing, agency building, and global
+                            earning strategies for professionals.</p>
+
+                        <div class="course-divider"></div>
+
+                        <ul class="course-features">
+                            <li><i class="fas fa-lock text-muted"></i> Client Acquisition</li>
+                            <li><i class="fas fa-lock text-muted"></i> B2B AI Consulting</li>
+                            <li><i class="fas fa-lock text-muted"></i> Workflow Automation</li>
+                            <li><i class="fas fa-lock text-muted"></i> Scaling your Agency</li>
+                        </ul>
+                        <div class="course-action">
+                            <button class="btn btn-glass btn-block" disabled>Unlock Soon</button>
+                        </div>
                     </div>
                 </div>
-                <p class="urgency-text text-center mt-4"><span>Limited Seats Available!</span> Our current batch is
-                    starting soon.</p>
+
+                <div class="urgency-banner glass-card" data-reveal="up">
+                    <div class="urgency-content">
+                        <i class="fas fa-fire flame-icon"></i>
+                        <p><strong>Limited Seats Available!</strong> Our current batch is starting soon. Don't miss out.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Class Policy Notice -->
+                <div class="policy-banner glass-card" data-reveal="up">
+                    <h4 class="policy-title"><i class="fas fa-info-circle"></i> Class Policy & Guidelines</h4>
+                    <div class="policy-grid">
+                        <div class="policy-item">
+                            <div class="policy-icon zoom-icon"><i class="fas fa-video"></i></div>
+                            <div>
+                                <strong>Live on Zoom</strong>
+                                <p>All classes are conducted live via Zoom — interactive, real-time, and engaging.</p>
+                            </div>
+                        </div>
+                        <div class="policy-item">
+                            <div class="policy-icon no-rec-icon"><i class="fas fa-ban"></i></div>
+                            <div>
+                                <strong>No Recorded Lectures</strong>
+                                <p>Recorded lectures will not be provided. Attendance in live sessions is mandatory.</p>
+                            </div>
+                        </div>
+                        <div class="policy-item">
+                            <div class="policy-icon warning-icon"><i class="fas fa-exclamation-triangle"></i></div>
+                            <div>
+                                <strong>Recording Strictly Prohibited</strong>
+                                <p>Recording or sharing any part of the lectures is strictly prohibited and will result
+                                    in immediate removal.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
         <!-- Growth Journey Section -->
-        <section id="journey" class="journey-section">
+        <section id="journey" class="section journey-section">
             <div class="container">
-                <h2 class="section-title text-center">Your Growth Roadmap</h2>
-                <div class="journey-path">
-                    <div class="step">
-                        <div class="step-num">01</div>
-                        <h4>Learn AI</h4>
-                        <p>Get familiar with the latest AI tools and technologies.</p>
+                <div class="section-header text-center" data-reveal="up">
+                    <div class="section-label">Roadmap</div>
+                    <h2 class="section-heading">Your Growth <span class="text-gradient">Journey</span></h2>
+                    <p class="section-subtitle">A proven 4-step framework designed to take you from a beginner to an
+                        earning professional.</p>
+                </div>
+
+                <div class="journey-timeline">
+                    <div class="timeline-track"></div>
+
+                    <div class="timeline-step" data-reveal="up" style="transition-delay: 0.1s;">
+                        <div class="step-marker">
+                            <span class="step-number">01</span>
+                            <div class="marker-glow"></div>
+                        </div>
+                        <div class="step-content glass-card premium-card">
+                            <h4 class="step-title">Learn AI Tools</h4>
+                            <p class="step-desc">Master ChatGPT, Midjourney, and other cutting-edge AI software to 10x
+                                your productivity.</p>
+                        </div>
                     </div>
-                    <div class="step">
-                        <div class="step-num">02</div>
-                        <h4>Build Skills</h4>
-                        <p>Apply your knowledge to create professional-grade work.</p>
+
+                    <div class="timeline-step step-right" data-reveal="up" style="transition-delay: 0.2s;">
+                        <div class="step-marker">
+                            <span class="step-number">02</span>
+                            <div class="marker-glow"></div>
+                        </div>
+                        <div class="step-content glass-card premium-card">
+                            <h4 class="step-title">Build Hard Skills</h4>
+                            <p class="step-desc">Apply your AI knowledge to real-world projects: content creation,
+                                design, and automations.</p>
+                        </div>
                     </div>
-                    <div class="step">
-                        <div class="step-num">03</div>
-                        <h4>Start Earning</h4>
-                        <p>Launch your freelancing career or digital business.</p>
+
+                    <div class="timeline-step" data-reveal="up" style="transition-delay: 0.3s;">
+                        <div class="step-marker">
+                            <span class="step-number">03</span>
+                            <div class="marker-glow"></div>
+                        </div>
+                        <div class="step-content glass-card premium-card">
+                            <h4 class="step-title">Start Earning</h4>
+                            <p class="step-desc">Learn how to monetize your new skills through freelancing platforms and
+                                direct client outreach.</p>
+                        </div>
                     </div>
-                    <div class="step">
-                        <div class="step-num">04</div>
-                        <h4>Grow Professionally</h4>
-                        <p>Scale your skills and reach true financial freedom.</p>
+
+                    <div class="timeline-step step-right" data-reveal="up" style="transition-delay: 0.4s;">
+                        <div class="step-marker">
+                            <span class="step-number">04</span>
+                            <div class="marker-glow"></div>
+                        </div>
+                        <div class="step-content glass-card premium-card">
+                            <h4 class="step-title">Achieve Freedom</h4>
+                            <p class="step-desc">Scale your income, build professional independence, and secure your
+                                financial future.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- How It Works Section -->
-        <section id="how-it-works" class="how-it-works">
+        <section id="how-it-works" class="section how-it-works">
             <div class="container">
-                <h2 class="section-title text-center">How to Get Started</h2>
+                <div class="section-header text-center" data-reveal="up">
+                    <h2 class="section-heading">How to <span class="text-gradient">Get Started</span></h2>
+                </div>
+
                 <div class="steps-grid">
-                    <div class="how-step">
-                        <i class="fas fa-file-alt"></i>
-                        <h3>Fill the Form</h3>
-                        <p>Complete the registration process via our simple enrollment form.</p>
+                    <div class="how-card glass-card premium-card" data-reveal="up" style="transition-delay: 0.1s;">
+                        <div class="how-icon-wrap">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <h3 class="how-title">1. Fill the Form</h3>
+                        <p class="how-desc">Complete the registration process via our simple and secure enrollment form.
+                        </p>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdB96-YvT9lr67E8rFunnnAn-qFR_ITgN2ZRzqG21204jN9Zw/viewform"
+                            target="_blank" class="btn btn-primary btn-sm btn-glow" style="margin-top: 1.5rem;">Open
+                            Form</a>
                     </div>
-                    <div class="how-step">
-                        <i class="fab fa-whatsapp"></i>
-                        <h3>Get Contacted</h3>
-                        <p>Our team will reach out to you via WhatsApp for verification.</p>
+
+                    <div class="how-card glass-card premium-card" data-reveal="up" style="transition-delay: 0.2s;">
+                        <div class="how-icon-wrap">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <h3 class="how-title">2. Get Contacted</h3>
+                        <p class="how-desc">Our dedicated team will reach out to you directly via WhatsApp for
+                            verification.</p>
+                        <a href="https://wa.me/923334747734" target="_blank" class="btn btn-glass btn-sm"
+                            style="margin-top: 1.5rem; color: #25D366; border-color: rgba(37, 211, 102, 0.3);"><i
+                                class="fab fa-whatsapp"></i> +92 333 4747734</a>
                     </div>
-                    <div class="how-step">
-                        <i class="fas fa-users"></i>
-                        <h3>Join the Group</h3>
-                        <p>Get added to our official learning community and batch group.</p>
+
+                    <div class="how-card glass-card premium-card" data-reveal="up" style="transition-delay: 0.3s;">
+                        <div class="how-icon-wrap">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3 class="how-title">3. Join the Group</h3>
+                        <p class="how-desc">Get added to our official learning community and private batch group.</p>
                     </div>
-                    <div class="how-step">
-                        <i class="fas fa-rocket"></i>
-                        <h3>Start Learning</h3>
-                        <p>Begin your AI-powered journey to professional growth.</p>
+
+                    <div class="how-card glass-card premium-card" data-reveal="up" style="transition-delay: 0.4s;">
+                        <div class="how-icon-wrap">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h3 class="how-title">4. Start Learning</h3>
+                        <p class="how-desc">Begin your AI-powered journey to professional growth and success.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Enrollment Section -->
-        <section id="enroll" class="enroll-section">
+        <section id="enroll" class="section enroll-section">
             <div class="container">
-                <div class="enroll-box">
-                    <h2 class="section-title">Ready to Transform Your Life?</h2>
-                    <p>Join the next batch of Shaheer Growth Hub and master AI skills before everyone else.</p>
-                    <div class="form-container">
-                        <div class="form-placeholder">
-                            <p>Current Batch: Register Now to Secure Your Spot</p>
+                <div class="cta-box glass-card premium-card" data-reveal="up">
+                    <div class="cta-glow"></div>
+                    <div class="cta-content">
+                        <h2 class="cta-title">Ready to Transform Your Life?</h2>
+                        <p class="cta-desc">Join the next batch of Shaheer Growth Hub and master AI skills before
+                            everyone else. Secure your spot today.</p>
+
+                        <div class="cta-action">
                             <a href="https://docs.google.com/forms/d/e/1FAIpQLSdB96-YvT9lr67E8rFunnnAn-qFR_ITgN2ZRzqG21204jN9Zw/viewform"
-                                target="_blank" class="btn btn-primary">Open Enrollment Form</a>
+                                target="_blank" class="btn btn-primary btn-glow btn-lg pulse-btn">
+                                <span class="btn-text">Open Enrollment Form</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                            <p class="cta-note"><i class="fas fa-shield-alt"></i> Secure registration via Google Forms
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Contact Section -->
-        <section id="contact" class="contact-section">
-            <div class="container">
-                <div class="contact-grid">
-                    <div class="contact-info">
-                        <h2 class="section-title">Connect with Us</h2>
-                        <p>Have questions? Reach out directly and let's start a conversation about your future.</p>
-                        <div class="contact-methods">
-                            <a href="tel:+923334747734" class="contact-icon" title="Call Us"><i
-                                    class="fas fa-phone-alt"></i></a>
-                            <a href="https://wa.me/923334747734" target="_blank" class="contact-icon whatsapp-icon"
-                                title="WhatsApp Us"><i class="fab fa-whatsapp"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
     </main>
 
     <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
+    <footer class="glass-footer">
+        <div class="footer-top">
+            <div class="container grids-2 footer-grids">
                 <div class="footer-brand">
-                    <div class="logo">SHAHEER<span>GROWTH HUB</span></div>
-                    <p>Empowering youth to escape negative environments and build a prosperous future through AI
-                        learning.</p>
+                    <a href="#" class="logo">
+                        <span class="logo-text">SHAHEER</span>
+                        <span class="logo-subtext">GROWTH HUB</span>
+                    </a>
+                    <p class="footer-desc">Empowering youth to escape negative environments and build a prosperous
+                        future through advanced AI learning and high-income skills.</p>
+                </div>
+
+                <div class="footer-contact">
+                    <h4 class="footer-heading">Connect with Us</h4>
+                    <p class="footer-text">Have questions? Reach out directly to start a conversation about your future.
+                    </p>
+                    <div class="social-links">
+                        <a href="tel:+923334747734" class="social-btn glass-card" title="Call Us"><i
+                                class="fas fa-phone-alt"></i></a>
+                        <a href="https://wa.me/923334747734" target="_blank" class="social-btn glass-card whatsapp-btn"
+                            title="WhatsApp Us"><i class="fab fa-whatsapp"></i></a>
+                    </div>
                 </div>
             </div>
-            <div class="footer-bottom">
-                &copy; 2026 Shaheer Growth Hub. All rights reserved. Professional & Skill-Based AI Learning.
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 Shaheer Growth Hub. All rights reserved. Built for the Future.</p>
             </div>
         </div>
     </footer>

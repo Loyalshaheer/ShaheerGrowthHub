@@ -3,63 +3,78 @@ document.addEventListener('DOMContentLoaded', () => {
     const observerOptions = {
         root: null,
         rootMargin: '0px',
-        threshold: 0.1
+        threshold: 0.15
     };
 
-    const revealElements = document.querySelectorAll('.animate-reveal');
-    
-    // Add logic to animate steps and cards
-    const steps = document.querySelectorAll('.step');
-    const cards = document.querySelectorAll('.course-card');
+    const revealElements = document.querySelectorAll('[data-reveal]');
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
+                entry.target.classList.add('is-revealed');
+                // Optional: Stop observing after reveal to keep it revealed
+                // observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
 
-    revealElements.forEach(el => observer.observe(el));
-    steps.forEach((step, index) => {
-        step.style.transitionDelay = `${index * 0.1}s`;
-        observer.observe(step);
-    });
-    cards.forEach(card => observer.observe(card));
+    // Initial reveal for items in viewport
+    setTimeout(() => {
+        revealElements.forEach(el => observer.observe(el));
+    }, 100);
 
     // Header Background on Scroll
-    const header = document.querySelector('header');
+    const header = document.querySelector('.glass-header');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
-            header.style.background = 'rgba(5, 5, 5, 0.95)';
-            header.style.padding = '1rem 0';
+            header.classList.add('scrolled');
         } else {
-            header.style.background = 'rgba(5, 5, 5, 0.8)';
-            header.style.padding = '1.5rem 0';
+            header.classList.remove('scrolled');
         }
     });
 
-    // Simple Form Simulation
-    const enrollBtn = document.querySelector('.form-placeholder .btn');
-    if (enrollBtn) {
-        enrollBtn.addEventListener('click', () => {
-            alert('Redirecting to Google Enrollment Form...');
-            // window.location.href = 'YOUR_GOOGLE_FORM_URL';
+    // Mobile Menu Toggle
+    const menuBtn = document.querySelector('.mobile-menu-btn');
+    const navLinks = document.querySelector('.nav-links');
+    const menuIcon = document.querySelector('.mobile-menu-btn i');
+
+    if (menuBtn && navLinks) {
+        menuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            if (navLinks.classList.contains('active')) {
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-times');
+            } else {
+                menuIcon.classList.remove('fa-times');
+                menuIcon.classList.add('fa-bars');
+            }
+        });
+
+        // Close menu when clicking a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                menuIcon.classList.remove('fa-times');
+                menuIcon.classList.add('fa-bars');
+            });
         });
     }
-});
 
-// CSS Addition via JS for visible class (quick fix)
-const style = document.createElement('style');
-style.textContent = `
-    .animate-reveal, .step, .course-card {
-        opacity: 0;
-        transform: translateY(30px);
-        transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    .animate-reveal.visible, .step.visible, .course-card.visible {
-        opacity: 1;
-        transform: translateY(0);
-    }
-`;
-document.head.appendChild(style);
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                const headerOffset = 100;
+                const elementPosition = target.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: "smooth"
+                });
+            }
+        });
+    });
+});
