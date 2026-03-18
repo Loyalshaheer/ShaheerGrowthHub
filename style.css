@@ -551,6 +551,7 @@ nav {
     z-index: 1;
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.2));
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -1110,22 +1111,40 @@ nav {
 }
 
 /* ==========================================================================
-   Responsive Design
+   Responsive Design — Tablet (max 1024px)
    ========================================================================== */
 @media (max-width: 1024px) {
+    :root {
+        --section-spacing: 80px;
+    }
+
     .grids-2 {
         grid-template-columns: 1fr;
         gap: 3rem;
     }
 
+    /* Hero */
+    .hero-section {
+        padding-top: 100px;
+    }
+
+    .hero-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 3rem;
+    }
+
     .hero-content {
         order: 1;
-        text-align: center;
+        width: 100%;
     }
 
     .hero-visual-wrapper {
         order: 2;
-        height: 400px;
+        width: 100%;
+        height: 380px;
     }
 
     .hero-subtitle {
@@ -1134,52 +1153,41 @@ nav {
 
     .hero-actions {
         justify-content: center;
+        flex-wrap: wrap;
     }
 
     .hero-stats {
         justify-content: center;
+        gap: 2rem;
     }
 
     .floating-badge {
         display: none;
     }
-}
 
-@media (max-width: 768px) {
-    .nav-links {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: rgba(10, 11, 15, 0.98);
-        flex-direction: column;
-        padding: 2rem;
-        gap: 1.5rem;
-        border-bottom: 1px solid var(--border-glass);
-        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-        transition: var(--transition-normal);
-        display: flex;
+    /* About */
+    .about-visual {
+        order: 2;
     }
 
-    .nav-links.active {
-        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    .about-content {
+        order: 1;
     }
 
-    .mobile-menu-btn {
-        display: block;
-    }
-
+    /* Journey — collapse to left-aligned */
     .timeline-track {
-        left: 30px;
+        left: 28px;
     }
 
     .step-marker {
-        left: 30px;
+        left: 28px;
+        width: 56px;
+        height: 56px;
     }
 
     .step-content {
-        width: calc(100% - 80px);
-        left: 80px !important;
+        width: calc(100% - 86px);
+        left: 86px !important;
         position: relative;
     }
 
@@ -1188,20 +1196,372 @@ nav {
         justify-content: flex-end;
     }
 
+    /* Footer */
+    .footer-grids {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+}
+
+/* ==========================================================================
+   Responsive Design — Mobile (max 768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+    :root {
+        --section-spacing: 60px;
+    }
+
+    /* --- Navigation --- */
+    .glass-header {
+        padding: 1rem 0;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(6, 6, 10, 0.98);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        flex-direction: column;
+        padding: 1.5rem;
+        gap: 1.2rem;
+        border-top: 1px solid var(--border-glass);
+        border-bottom: 1px solid var(--border-glass);
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        transition: clip-path 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        display: flex;
+    }
+
+    .nav-links.active {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    .nav-link {
+        font-size: 1rem;
+        padding: 0.5rem 0;
+    }
+
+    .nav-links li:last-child {
+        width: 100%;
+    }
+
+    .nav-links li:last-child .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .mobile-menu-btn {
+        display: block;
+    }
+
+    /* --- Hero --- */
+    .hero-section {
+        min-height: auto;
+        padding: 120px 0 60px;
+    }
+
+    .hero-container {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        gap: 2.5rem;
+    }
+
+    .hero-title {
+        font-size: clamp(2rem, 8vw, 2.8rem);
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+        margin: 0 auto 2rem;
+    }
+
+    .badge-modern {
+        font-size: 0.8rem;
+    }
+
     .hero-actions {
         flex-direction: column;
         width: 100%;
+        gap: 1rem;
     }
 
     .hero-actions .btn {
         width: 100%;
-        margin-left: 0;
+        justify-content: center;
     }
 
     .hero-stats {
-        flex-direction: column;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.5rem;
+        width: 100%;
+        padding-top: 1.5rem;
+        border-top: 1px solid var(--border-glass);
+    }
+
+    .stat-number {
+        font-size: 1.4rem;
+    }
+
+    .stat-label {
+        font-size: 0.7rem;
+        letter-spacing: 0.5px;
+    }
+
+    .hero-visual-wrapper {
+        height: 240px;
+        width: 100%;
+    }
+
+    .hero-image-card {
+        border-radius: 20px;
+    }
+
+    /* --- About --- */
+    .about-visual {
+        display: none;
+    }
+
+    .grids-2 {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .section-heading {
+        font-size: clamp(1.8rem, 7vw, 2.4rem);
+    }
+
+    .section-body {
+        font-size: 1rem;
+    }
+
+    .mission-checks li {
+        font-size: 0.95rem;
+    }
+
+    /* --- Courses --- */
+    .courses-grid {
+        grid-template-columns: 1fr;
         gap: 1.5rem;
-        text-align: center;
+    }
+
+    .course-card {
+        padding: 1.8rem 1.4rem;
+    }
+
+    .course-title {
+        font-size: 1.3rem;
+    }
+
+    .course-desc {
+        font-size: 0.92rem;
+    }
+
+    .urgency-banner {
+        padding: 1.2rem 1rem;
+    }
+
+    .urgency-content {
+        font-size: 0.9rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .policy-banner {
+        padding: 1.5rem 1.2rem;
+    }
+
+    .policy-grid {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+    }
+
+    .policy-title {
+        font-size: 0.85rem;
+    }
+
+    /* --- Journey Timeline --- */
+    .journey-timeline {
+        max-width: 100%;
+    }
+
+    .timeline-track {
+        left: 22px;
+    }
+
+    .step-marker {
+        left: 22px;
+        width: 44px;
+        height: 44px;
+    }
+
+    .step-number {
+        font-size: 0.9rem;
+    }
+
+    .step-content {
+        width: calc(100% - 74px);
+        left: 74px !important;
+        position: relative;
+        padding: 1.4rem;
+        border-radius: 16px;
+    }
+
+    .timeline-step {
+        margin-bottom: 1.5rem;
+        justify-content: flex-end;
+    }
+
+    .step-title {
+        font-size: 1.1rem;
+    }
+
+    .step-desc {
+        font-size: 0.9rem;
+    }
+
+    /* --- How It Works --- */
+    .steps-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 1.2rem;
+    }
+
+    .how-card {
+        padding: 1.8rem 1rem;
+    }
+
+    .how-icon-wrap {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .how-title {
+        font-size: 1.05rem;
+    }
+
+    .how-desc {
+        font-size: 0.88rem;
+    }
+
+    .how-card .btn {
+        font-size: 0.82rem;
+        padding: 0.55rem 0.9rem;
+    }
+
+    /* --- Enroll / CTA --- */
+    .cta-box {
+        padding: 3rem 1.5rem;
+        border-radius: 20px;
+    }
+
+    .cta-title {
+        font-size: clamp(1.8rem, 6vw, 2.5rem);
+    }
+
+    .cta-desc {
+        font-size: 1rem;
+    }
+
+    .pulse-btn {
+        padding: 1rem 2rem;
+        font-size: 1rem;
+        width: 100%;
+        justify-content: center;
+        border-radius: 14px;
+    }
+
+    .cta-action {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* --- Footer --- */
+    .footer-grids {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .footer-desc {
+        max-width: 100%;
+    }
+
+    .footer-heading {
+        font-size: 1.1rem;
+    }
+
+    .social-links {
+        gap: 0.8rem;
+    }
+
+    .social-btn {
+        width: 44px;
+        height: 44px;
+        font-size: 1.1rem;
+    }
+
+    .footer-bottom {
+        font-size: 0.8rem;
+        padding: 1.2rem 0;
+    }
+}
+
+/* ==========================================================================
+   Responsive Design — Small Mobile (max 480px)
+   ========================================================================== */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 1rem;
+    }
+
+    .hero-title {
+        font-size: 1.9rem;
+    }
+
+    .hero-stats {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.5rem;
+    }
+
+    .stat-number {
+        font-size: 1.2rem;
+    }
+
+    .stat-label {
+        font-size: 0.6rem;
+    }
+
+    .steps-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .course-card {
+        padding: 1.4rem 1rem;
+    }
+
+    .cta-box {
+        padding: 2.5rem 1rem;
+    }
+
+    .timeline-track {
+        left: 18px;
+    }
+
+    .step-marker {
+        left: 18px;
+        width: 38px;
+        height: 38px;
+    }
+
+    .step-content {
+        width: calc(100% - 64px);
+        left: 64px !important;
+        padding: 1rem;
     }
 }
 
